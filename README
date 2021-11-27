@@ -1,0 +1,38 @@
+Why did I decide to create this?
+In Australia mobile phone data plans can get quite expensive and I thought to myself that getting unlimited SMS is little to nothing, the cheapest plan I found in australia
+that was only $10 a month which included unlimited local SMS and voice and 2gb of data was by a company called 'southern phone'.
+
+I decided to take advantage of this generosity and thought well most people who own a mobile phone would if not have home internet because its cheaper? they would be
+able to pay a friend or someone a little each month to keep a phone at their house connected to power, using their internet.
+
+Then it dawned on me, I did some resaerch and found that someone by the name of Alexandra03 did a similar version of smsdialup however this used twilio's api and
+defeated the whole purpose of what I was trying to do, I wanted the closest thing to free internet as I could find.
+
+I based my idea of alexandra03's idea and decided to write the backend completely from scratch and I did this in android, the code is nothing flashy but it is a backend,
+
+You might get SMS limits, and to fix this you need to use adb in your phone and execute these 3 commands:
+
+adb shell
+settings put global sms_outgoing_check_max_count 6000
+settings put global sms_outgoing_check_interval_ms 60000
+
+The backend waits for SMS messages in this case its just a website,
+
+It checks if it is contains a .com or .org etc then if it does, checks if theres a https:// or http:// protocol prefix, if not then it adds a default http:// protocol prefix.
+
+
+The app which I want to say thanks and give credits as I based the website app off alexandra03's sms dialup (browser) app and modified to code to work with my own backend instead of twillio's
+also added some features and made quite a lot of changes.
+
+Essentially this browser just waits for the START command then it knows to accept any message from there on out and store it in an ArrayList and when it receives the STOP command it
+knows that it has all the data and then to render it as a visible webpage.
+
+I also took the idea that Alexandra03 had and that was to sanitize the HTML code and to do this I used JSoup.
+
+I then converted some strings into greek symbols and words on its own into letters.
+
+Thank you and once again, credits goes to alexandra03 for using some of her website browser code to save me time in this project.
+credits to myself for recreating the backend in java and for getting this to work without the use of twilio.
+
+Alexandra03's github: https://github.com/alexandra03
+
